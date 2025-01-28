@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class NasaService {
   private apiUrl = 'https://api.nasa.gov/planetary/apod';
-  private apiKey = '9YgkUeMw5gUfjVxv7yCxQCGTPOE1Rwk1dWqm1kWh'; // Reemplaza con tu API Key
+  private apiKey = 'QhdDtj7imbcvsGqXvImIkhFtW6e88rYwr45VCbxM'; // Reemplaza con tu API Key
 
 
   constructor(private http: HttpClient) { }
