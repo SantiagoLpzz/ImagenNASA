@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      NASA Imagen del Día
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,11 +9,19 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">NASA Imagen del Día</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="ion-padding">
+    <ion-item>
+      <ion-label position="stacked">Selecciona una fecha</ion-label>
+      <ion-input [(ngModel)]="fecha" type="date"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="asignarFecha()">Buscar Imagen</ion-button>
+
+    <br>
+
     <ng-container *ngIf="imageData; else loading">
       <ion-card>
         <img [src]="imageData.url" alt="NASA Image of the Day"/>
@@ -23,7 +31,7 @@
 
         <ion-card-content>
           <p> {{ imageData.explanation }} </p>
-          <p><strong>Date:</strong> {{ imageData.date }} </p>
+          <p><strong>Fecha:</strong> {{ imageData.date }} </p>
         </ion-card-content>
       </ion-card>
     </ng-container>
