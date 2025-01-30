@@ -10,10 +10,19 @@ import { NasaService } from '../nasa.service';
 export class HomePage {
 
   imageData: any;
+  fecha: string = '';
 
   constructor(private nasaService: NasaService) {}
 
-  ngOnInit(){
+  asignarFecha() {
+    if (this.fecha) {
+      this.nasaService.getImageOfTheDay(this.fecha).subscribe((data) => {
+        this.imageData = data;
+      });
+    }
+  }
+
+  ngOnInit() {
     this.nasaService.getImageOfTheDay().subscribe((data) => {
       this.imageData = data;
     });
